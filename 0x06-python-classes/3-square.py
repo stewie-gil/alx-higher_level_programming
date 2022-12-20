@@ -2,11 +2,13 @@
 """Square module
 this module contains a class that defines a square"""
 
+
 class Square:
 
     """Defines a square """
     def area(self):
         return self.__size**2
+
     def __init__(self, size=0):
         self.__size = size
         if type(self.__size) != int:
