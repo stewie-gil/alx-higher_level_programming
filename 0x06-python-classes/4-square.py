@@ -1,77 +1,23 @@
 #!/usr/bin/python3
+"""Square module.et or get it."""
 
 
+class Square:
+    """Defines a square"""
+    def area(self):
+        return self._size**2
 
+    def __init__(self, size=0):
+        self._size = size
 
+    @property
+    def size(self):
+        return self._size
 
- class Square:
-
-     """Represents a square"""
-
-
-
-         def __init__(self, size=0):
-
-                 """Initializes the data
-
-                         Args:
-
-                                         size: size of the square
-
-                                                 """
-
-
-
-                                                         self.size = size
-
-
-
-                                                             @property
-
-                                                                 def size(self):
-
-                                                                         """Retrieves the size"""
-
-
-
-                                                                                 return self.__size
-
-
-
-                                                                                     @size.setter
-
-                                                                                         def size(self, value):
-
-                                                                                                 """Sets the size value
-
-                                                                                                         Args:
-
-                                                                                                                         value: the size of the square
-
-                                                                                                                                 """
-
-
-
-                                                                                                                                         if type(value) is int:
-
-                                                                                                                                                     if value < 0:
-
-                                                                                                                                                                     raise ValueError("size must be >= 0")
-
-                                                                                                                                                                                 else:
-
-                                                                                                                                                                                                 self.__size = value
-
-                                                                                                                                                                                                         else:
-
-                                                                                                                                                                                                                     raise TypeError("size must be an integer")
-
-
-
-                                                                                                                                                                                                                         def area(self):
-
-                                                                                                                                                                                                                                 """Returns the current square area"""
-
-
-
-                                                                                                                                                                                                                                         return (self.__size * self.__size)
+    @size.setter
+    def size(self, value):
+        if type(value) != int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self._size = value
