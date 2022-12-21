@@ -1,77 +1,77 @@
-a class called Square"""
+#!/usr/bin/python3
 
 
 
 
 
-class Square:
+ class Square:
 
-"""Represents a square"""
-
-
-
-def __init__(self, size=0):
-
-"""Initializes the data
-
-Args:
-
-size: size of the square
-
-"""
+     """Represents a square"""
 
 
 
-self.size = size
+         def __init__(self, size=0):
+
+                 """Initializes the data
+
+                         Args:
+
+                                         size: size of the square
+
+                                                 """
 
 
 
-@property
-
-def size(self):
-
-"""Retrieves the size"""
+                                                         self.size = size
 
 
 
-return self.__size
+                                                             @property
+
+                                                                 def size(self):
+
+                                                                         """Retrieves the size"""
 
 
 
-@size.setter
-
-def size(self, value):
-
-"""Sets the size value
-
-Args:
-
-value: the size of the square
-
-"""
+                                                                                 return self.__size
 
 
 
-if type(value) is int:
+                                                                                     @size.setter
 
-if value < 0:
+                                                                                         def size(self, value):
 
-raise ValueError("size must be >= 0")
+                                                                                                 """Sets the size value
 
-else:
+                                                                                                         Args:
 
-self.__size = value
+                                                                                                                         value: the size of the square
 
-else:
-
-raise TypeError("size must be an integer")
+                                                                                                                                 """
 
 
 
-def area(self):
+                                                                                                                                         if type(value) is int:
 
-"""Returns the current square area"""
+                                                                                                                                                     if value < 0:
+
+                                                                                                                                                                     raise ValueError("size must be >= 0")
+
+                                                                                                                                                                                 else:
+
+                                                                                                                                                                                                 self.__size = value
+
+                                                                                                                                                                                                         else:
+
+                                                                                                                                                                                                                     raise TypeError("size must be an integer")
 
 
 
-return (self.__size * self.__size)
+                                                                                                                                                                                                                         def area(self):
+
+                                                                                                                                                                                                                                 """Returns the current square area"""
+
+
+
+                                                                                                                                                                                                                                         return (self.__size * self.__size)
