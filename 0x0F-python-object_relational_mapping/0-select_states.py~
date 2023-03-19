@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+""" 
+Script that lists all states from the database hbt
+
+Arguements:
+  mysl username (str)
+  mysql password (str)
+  database-name (str)
+"""
+import sys
+import MySQLdb
+
+if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+
+    #by default it will connect to localhost:3306 but will still specify 
+    db = MySQLdb.connect(host = "localhost", user = username , password = password, database = database_name)
+    cur = db.cursor()
+
+    cur.execute("""SELECT * FROM states ORDER BY id""")
+    record = cur.fetchall()
+    for row in record:
+        print(row)
