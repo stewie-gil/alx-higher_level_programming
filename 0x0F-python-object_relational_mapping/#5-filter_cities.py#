@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+11;rgb:0000/0000/0000"""
+Script lists all cities
+Arguments
+usernmae(str)
+password(str)
+databasename()
+"""
+import sys
+import MySQLdb
+
+if __name__ == "__main__":
+    name = sys.argv[1]
+    passw = sys.argv[2]
+    dtb = sys.argv[3]
+
+    db = MySQLdb.connect(user=name, passwd=passw, db=dtb)
+
+    cur = db.cursor()
+
+    cur.execute("SELECT cities.name FROM cities \
+INNER JOIN states ON cities.state_id=states.id\
+ WHERE states.name='{}'".format(sys.argv[4]))
+
+    rows = cur.fetchall()
+    for i in range(len(rows)):
+        print(rows[i][0], end=", " if i + 1 < len(rows) else "")
+    print("")
+
+
+""""
+        for char in row:
+            if char.isalpha():
+                print(char, end="")
+            print(', ', end="")
+"""
