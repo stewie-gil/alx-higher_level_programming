@@ -10,8 +10,7 @@ Base = declarative_base()
 
 class State(Base):
     """
-    This class links to the state table of our database
-    
+    This class links to the state table of our databas
     Attributes:
     id(int): id of the state,
     name(str): name of the state
