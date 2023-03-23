@@ -9,13 +9,12 @@ if __name__ == "__main__":
     b = sys.argv[2]
     c = sys.argv[3]
     lc = 'localhost'
-    engine = create_engine\
-        ('mysql+mysqldb://{}:{}@{}/{}'.format(a, b, lc, c), pool_pre_ping=True)
-
+    msa = 'mysql+mysqldb://{}:{}@{}/{}'
+    engine = create_engine(msa.format(a, b, lc, c), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     a = session.query(State).filter_by(id=1).all()
 
     for i in a:
-        print ("{}: {}".format(i.id, i.name))
+        print("{}: {}".format(i.id, i.name))
