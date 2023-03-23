@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-11;rgb:0000/0000/0000from model_state import Base, State
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    a = session.query(State).filter_by(id=1).all()
+    a = session.query(State).first()
 
     if a:
         for i in a:
