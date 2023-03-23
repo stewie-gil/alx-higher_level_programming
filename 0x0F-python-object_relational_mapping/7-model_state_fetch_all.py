@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module lists all state objects from the database
+"""
 from model_state import Base, State
 import sys
 from sqlalchemy import create_engine
