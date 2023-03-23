@@ -3,6 +3,7 @@ from model_state import Base, State
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.engine.url import URL
 
 if __name__ == "__main__":
     mySQL_u = sys.argv[1]
