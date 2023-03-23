@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from model_state import Base, State
+11;rgb:0000/0000/0000from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
@@ -16,5 +16,8 @@ if __name__ == "__main__":
 
     a = session.query(State).filter_by(id=1).all()
 
-    for i in a:
-        print("{}: {}".format(i.id, i.name))
+    if a:
+        for i in a:
+            print("{}: {}".format(i.id, i.name))
+    else:
+        print("Nothing")
