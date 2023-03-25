@@ -1,0 +1,2 @@
+Learning Onjectives:
+Javascript basics
