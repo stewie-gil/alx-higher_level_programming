@@ -1,0 +1,16 @@
+#!/usr/bin/node
+
+// Print two args with is
+
+const arg = process.argv.slice(2);
+
+let arg1, arg2;
+
+if (arg[0]) {
+  arg1 = arg[0];
+}
+if (arg[1]) {
+  arg2 = arg[1];
+}
+
+console.log(arg1, 'is', arg2);
