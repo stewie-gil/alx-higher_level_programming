@@ -20,7 +20,7 @@ function bsort (arr) {
 
 const sorted = bsort(args);
 
-if (typeof (args[2]) == 'undefined') {
+if (typeof (args[2]) === 'undefined') {
   console.log(0);
 } else {
   console.log(sorted[sorted.length - 2]);
