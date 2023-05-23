@@ -3,21 +3,20 @@ const url = process.argv[2];
 const request = require('request');
 
 request(url, (error, response, body) => {
-    if (error) {
-	console.error(error);
-    } else {
-	
-	const data = JSON.parse(body);
+  if (error) {
+    console.error(error);
+  } else {
+    const data = JSON.parse(body);
 
-	for (let userid = 1; userid <= 10; userid++) {
+    const userid = data.filter((obj) => obj.userId);
 
-	const userdata = data.filter((obj) => obj.userId === userid);
+    console.log = userid;
 
-	const completed = userdata.filter((obj) => obj.completed === true).length;
-	const notCompleted = userdata.filter((obj) => obj.completed === false).length;
+    for (let userid = 1; userid <= 10; userid++) {
+      const userdata = data.filter((obj) => obj.userId === userid);
 
-	console.log(userid, ":", completed);
-	}
-
+      const completed = userdata.filter((obj) => obj.completed === true).length;
+      const notCompleted = userdata.filter((obj) => obj.completed === false).length;
     }
+  }
 });
